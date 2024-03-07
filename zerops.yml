@@ -1,6 +1,7 @@
 zerops:
   - setup: server
     build:
+      base: ubuntu@22.04
       buildCommands:
       - wget https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar
       deploy: server.jar
