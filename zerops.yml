@@ -1,5 +1,5 @@
 zerops:
-  - setup: minecraft
+  - setup: server
     run:
       prepareCommands:
         - apt install default-jre
