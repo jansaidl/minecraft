@@ -7,7 +7,8 @@ zerops:
       deploy: server.jar
     run:
       prepareCommands:
-        - apt install default-jre
+        - apt update
+        - apt install -y default-jre
       start: java -Xmx1024M -Xms1024M -jar server.jar nogui
 
 
