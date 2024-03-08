@@ -3,7 +3,15 @@ zerops:
     build:
       base: ubuntu@22.04
       buildCommands:
-      - echo none
-      deploy: /
+      - echo "nothing to build"
+      deploy:  ./
     run:
-      start: echo "a"
+      prepareCommands:
+      - apt update && apt install -y openjdk-21-jre
+      - curl -o  fabric-server.jar https://meta.fabricmc.net/v2/versions/loader/1.20.1/0.15.7/1.0.0/server/jar
+      - java -jar fabric-server.jar
+      - unzip mods.zip
+      - rm mods
+      - ln -s override/config mods
+      - echo "eula=false" > eula.txt
+      start: java -jar fabric-server.jar --nogui --port 5000
