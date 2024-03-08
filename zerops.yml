@@ -4,7 +4,8 @@ zerops:
       base: ubuntu@22.04
       buildCommands:
       - echo "nothing to build"
-      deploy:  ./
+      deploy:
+      - mods.zip
     run:
       prepareCommands:
       - apt update && apt install -y openjdk-21-jre
