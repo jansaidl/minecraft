@@ -3,12 +3,7 @@ zerops:
     build:
       base: ubuntu@22.04
       buildCommands:
-      - wget https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar
-      deploy: server.jar
+      - echo none
+      deploy: /
     run:
-      prepareCommands:
-        - apt update
-        - apt install -y default-jre
-      start: java -Xmx1024M -Xms1024M -jar server.jar nogui
-
-
+      start: echo "a"
